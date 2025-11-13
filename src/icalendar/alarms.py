@@ -14,7 +14,7 @@ This takes different calendar software into account and the RFC 9074 (Alarm Exte
 from __future__ import annotations
 
 from datetime import date, timedelta, tzinfo
-from typing import TYPE_CHECKING, Generator, Optional, Union
+from typing import TYPE_CHECKING, Optional, Union
 
 from icalendar.cal.event import Event
 from icalendar.cal.todo import Todo
@@ -28,6 +28,7 @@ from icalendar.timezone import tzp
 from icalendar.tools import is_date, normalize_pytz, to_datetime
 
 if TYPE_CHECKING:
+    from collections.abc import Generator
     from datetime import datetime
 
     from icalendar.cal.alarm import Alarm

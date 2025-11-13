@@ -5,7 +5,9 @@ See https://github.com/collective/icalendar/issues/662
 
 from __future__ import annotations
 
+import itertools
 from datetime import date, datetime, timedelta
+from zoneinfo import ZoneInfo
 
 import pytest
 
@@ -20,7 +22,6 @@ from icalendar import (
     vDDDTypes,
     vDuration,
 )
-from icalendar.compatibility import ZoneInfo
 
 
 def prop(component: Event | Todo, prop: str) -> str:
@@ -718,11 +719,11 @@ def test_get_alarm_triggers_repeated(alarms, file, triggers, duration, repeat):
     alarm = alarms[file].copy()
     alarm.REPEAT = repeat
     alarm.DURATION = duration
-    for expected, triggers in zip(triggers, alarm.triggers):
+    for expected, triggers in zip(triggers, alarm.triggers, strict=False):
         if not expected:
             assert triggers == ()
             continue
         assert len(triggers) == 1 + repeat
         assert triggers[0] == expected[0]
-        for x, y in zip(triggers[:-1], triggers[1:]):
+        for x, y in itertools.pairwise(triggers):
             assert y - x == duration

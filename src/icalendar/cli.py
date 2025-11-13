@@ -77,9 +77,10 @@ def view(event):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "calendar_files", nargs="+", 
+        "calendar_files",
+        nargs="+",
         type=argparse.FileType("r", encoding="utf-8-sig"),
-        help="one or more .ics files (use '-' for stdin)"
+        help="one or more .ics files (use '-' for stdin)",
     )
     parser.add_argument(
         "--output",

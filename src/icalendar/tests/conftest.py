@@ -3,9 +3,11 @@
 import itertools
 import sys
 import uuid
+import zoneinfo
+from collections.abc import Generator
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Generator
+from zoneinfo import ZoneInfo
 
 import pytest
 from dateutil import tz
@@ -21,7 +23,6 @@ from icalendar import (
     TypesFactory,
     vUTCOffset,
 )
-from icalendar.compatibility import ZoneInfo, zoneinfo
 from icalendar.timezone import TZP
 from icalendar.timezone import tzp as _tzp
 
@@ -84,8 +85,7 @@ class DataSource:
 
     def __contains__(self, key):
         """key in self.keys()"""
-        if key.endswith(".ics"):
-            key = key[:-4]
+        key = key.removesuffix(".ics")
         return key in self.keys()
 
     def __getattr__(self, key):

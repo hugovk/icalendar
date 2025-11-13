@@ -14,7 +14,8 @@ from __future__ import annotations
 import itertools
 import traceback
 from datetime import date, datetime, timedelta, timezone
-from typing import Any, Callable, Optional
+from typing import TYPE_CHECKING, Any, Optional
+from zoneinfo import ZoneInfo
 
 import pytest
 
@@ -30,10 +31,12 @@ from icalendar import (
     Todo,
     vCalAddress,
 )
-from icalendar.compatibility import ZoneInfo
 from icalendar.enums import BUSYTYPE
 
 from .conftest import NOW_UTC, UID_DEFAULT
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 UTC = timezone.utc
 

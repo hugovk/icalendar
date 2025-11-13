@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from datetime import timedelta
-from typing import TYPE_CHECKING, Sequence
+from typing import TYPE_CHECKING
 
 from icalendar.attr import (
     categories_property,
@@ -22,6 +22,7 @@ from icalendar.version import __version__
 
 if TYPE_CHECKING:
     import uuid
+    from collections.abc import Sequence
     from datetime import date, datetime
 
     from icalendar.cal.availability import Availability

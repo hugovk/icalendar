@@ -10,11 +10,12 @@ Related:
 from __future__ import annotations
 
 import functools
-from typing import TYPE_CHECKING, Callable, Optional, TypeVar
+from typing import TYPE_CHECKING, Optional, TypeVar
 
 from icalendar import enums
 
 if TYPE_CHECKING:
+    from collections.abc import Callable
     from enum import Enum
 
     from icalendar.parser import Parameters

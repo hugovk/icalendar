@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import uuid
 from datetime import date, datetime, timedelta
-from typing import TYPE_CHECKING, Optional, Sequence
+from typing import TYPE_CHECKING, Optional
 
 from icalendar.attr import (
     attendees_property,
@@ -29,6 +29,8 @@ from icalendar.cal.component import Component
 from icalendar.error import IncompleteComponent
 
 if TYPE_CHECKING:
+    from collections.abc import Sequence
+
     from icalendar.enums import CLASS, STATUS
     from icalendar.prop import vCalAddress
 

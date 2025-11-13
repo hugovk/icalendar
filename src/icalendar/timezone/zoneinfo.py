@@ -5,6 +5,7 @@ from __future__ import annotations
 import copy
 import copyreg
 import functools
+import zoneinfo
 from datetime import datetime, tzinfo
 from io import StringIO
 from typing import TYPE_CHECKING, Optional
@@ -13,7 +14,6 @@ from dateutil.rrule import rrule, rruleset
 from dateutil.tz import tzical
 from dateutil.tz.tz import _tzicalvtz
 
-from icalendar.compatibility import zoneinfo
 from icalendar.tools import is_date, to_datetime
 
 from .provider import TZProvider

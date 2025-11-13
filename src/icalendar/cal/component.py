@@ -13,7 +13,7 @@ from icalendar.parser import Contentline, Contentlines, Parameters, q_join, q_sp
 from icalendar.parser_tools import DEFAULT_ENCODING
 from icalendar.prop import TypesFactory, vDDDLists, vText
 from icalendar.timezone import tzp
-from icalendar.tools import is_date, is_datetime
+from icalendar.tools import is_date
 
 if TYPE_CHECKING:
     from icalendar.compatibility import Self
@@ -71,7 +71,9 @@ class Component(CaselessDict):
         return cls._components_factory.get(name, Component)
 
     @staticmethod
-    def _infer_value_type(value: date | datetime | timedelta | time | tuple | list) -> str | None:
+    def _infer_value_type(
+        value: date | datetime | timedelta | time | tuple | list,
+    ) -> str | None:
         """Infer the ``VALUE`` parameter from a Python type.
 
         Args:

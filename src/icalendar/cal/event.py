@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import uuid
 from datetime import date, datetime, timedelta
-from typing import TYPE_CHECKING, Literal, Sequence
+from typing import TYPE_CHECKING, Literal
 
 from icalendar.attr import (
     X_MOZ_LASTACK_property,
@@ -18,11 +18,11 @@ from icalendar.attr import (
     create_single_property,
     description_property,
     exdates_property,
-    images_property,
     get_duration_property,
     get_end_property,
     get_start_end_duration_with_validation,
     get_start_property,
+    images_property,
     location_property,
     organizer_property,
     priority_property,
@@ -46,6 +46,8 @@ from icalendar.cal.component import Component
 from icalendar.cal.examples import get_example
 
 if TYPE_CHECKING:
+    from collections.abc import Sequence
+
     from icalendar.alarms import Alarms
     from icalendar.enums import CLASS, STATUS, TRANSP
     from icalendar.prop import vCalAddress

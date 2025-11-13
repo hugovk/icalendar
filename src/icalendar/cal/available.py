@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import uuid
 from datetime import datetime
-from typing import TYPE_CHECKING, Optional, Sequence
+from typing import TYPE_CHECKING, Optional
 
 from icalendar.attr import (
     categories_property,
@@ -32,6 +32,7 @@ from icalendar.error import InvalidCalendar
 from .component import Component
 
 if TYPE_CHECKING:
+    from collections.abc import Sequence
     from datetime import date
 
 

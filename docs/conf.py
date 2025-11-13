@@ -69,8 +69,8 @@ html_theme_options = {
             "attributes": {
                 "target": "_blank",
                 "rel": "noopener me",
-                "class": "nav-link custom-fancy-css"
-            }
+                "class": "nav-link custom-fancy-css",
+            },
         },
         {
             "name": "PyPI",
@@ -80,13 +80,11 @@ html_theme_options = {
             "attributes": {
                 "target": "_blank",
                 "rel": "noopener me",
-                "class": "nav-link custom-fancy-css"
-            }
+                "class": "nav-link custom-fancy-css",
+            },
         },
     ],
-    "logo": {
-        "text": "icalendar"
-    },
+    "logo": {"text": "icalendar"},
     "navbar_start": ["navbar-logo", "version-switcher"],
     "navigation_with_keys": True,
     "search_bar_text": "Search",
@@ -100,7 +98,7 @@ html_theme_options = {
     "use_edit_page_button": True,
 }
 html_context = {
-#     "github_url": "https://github.com", # or your GitHub Enterprise site
+    #     "github_url": "https://github.com", # or your GitHub Enterprise site
     "github_user": "collective",
     "github_repo": "icalendar",
     "github_version": "main",
