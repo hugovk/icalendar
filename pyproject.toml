@@ -51,7 +51,7 @@ readme = { file = "README.rst", content-type = "text/x-rst" }
 # - dependencies for 3.8, Python 3.13 will come our October, too
 # - tool.ruff.target-version
 #
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 
 # see https://pypi.python.org/pypi?%3Aaction=list_classifiers
 classifiers = [
@@ -60,8 +60,6 @@ classifiers = [
     "License :: OSI Approved :: BSD License",
     "Operating System :: OS Independent",
     "Programming Language :: Python",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
@@ -73,9 +71,6 @@ classifiers = [
 
 dependencies = [
     "python-dateutil",
-    # install requirements depending on python version, TODO: Remove with Python 3.8
-    # see https://www.python.org/dev/peps/pep-0508/#environment-markers
-    "backports.zoneinfo; python_version < '3.9'",
     # tzdata: IANA timezone database fallback for zoneinfo (required on Windows,
     # provides current timezone data on all platforms)
     "tzdata",
@@ -136,7 +131,7 @@ version-file = "src/icalendar/_version.py"
 allow-direct-references = true
 
 [tool.ruff]
-target-version = "py38"
+target-version = "py310"
 unsafe-fixes = true
 
 [tool.ruff.lint]
